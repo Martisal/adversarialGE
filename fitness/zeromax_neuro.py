@@ -18,8 +18,9 @@ class zeromax_neuro(base_ff):
                 vec.append(0)
             else:
                 vec.append(1)
-
-        with open('/home/saletta/GrammEvo/mlp_zeromax.pickle', 'br') as mfile:
+        
+        #modify with the correct path
+        with open('/PATH/LEADING/TO/mlp_zeromax.pickle', 'br') as mfile:
             mlp = pickle.load(mfile)
 
         if len(vec) > 30:
