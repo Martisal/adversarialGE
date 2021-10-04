@@ -1,0 +1,5 @@
+numpy
+tensorflow
+pycparser
+pickle
+h5file
