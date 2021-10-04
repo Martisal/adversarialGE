@@ -1,0 +1,73 @@
+<function-definition> ::= <type-specifier> <fdeclarator> { <statements> return <operation>;}
+				| void <fdeclarator> { <statements> return;}
+				| int main(int argc, char **argv) {<statements> return <operation>;}
+
+<type-specifier> ::= char
+                   | int
+
+<fdeclarator> ::= <identifier>(<parameter-list>)
+		| <identifier>()
+
+<pointers> ::= * | ** #| ***
+
+<identifier> ::= str | buf | first | num | id1 | id2 | id3 | id4
+
+<parameter-list> ::= <type-specifier> <declarator>
+                   | <parameter-list>, <type-specifier> <declarator>
+
+<declarator> ::= <identifier>
+		| <pointers><identifier>
+
+<statements> ::= <statement> 
+		| <statements> <statement>
+
+<statement> ::= <type-specifier> <declarator> = <operation>;
+		| <type-specifier> <declarator>[<digits>];
+		| <declarator> = <operation>;
+		| <identifier> -> <identifier> = <operation>;
+		| <selection-statement>
+        | <iteration-statement>
+		| <custom-statement>
+
+<operation> ::= <primary-expression>
+               | <primary-expression> <operator> <primary-expression>
+               | <primary-expression> <operator> <primary-expression> <operator> <primary-expression>
+               | <primary-expression> <operator> <primary-expression> <operator> <primary-expression> <operator> <primary-expression>
+
+<operator> ::= +|-|*|/
+
+<selection-statement> ::= if (<boolean-expression>) {<statements>}
+                        | if (<boolean-expression>) {<statements>} else {<statements>}
+
+<primary-expression> ::= <identifier>
+                       | <constant>
+			| <identifier>[<digits>]
+			| <identifier> -> <identifier>
+			| argv[<digits>]
+
+<constant> ::= <integer-constant>
+             | <character-constant>
+
+<integer-constant> ::= <digits> 
+			| -<digits>
+
+<digits> ::= <digit> | <digits><digit>
+
+<digit> ::= 0|1|2|3|4|5|6|7|8|9
+
+<character-constant> ::= ''a''|''b''|''c''|''d''|''e''
+
+<boolean-expression> ::= <operation> >= <operation>
+			| <operation> <= <operation>
+			| <operation> == <operation>
+			| <operation> != <operation>
+
+<iteration-statement> ::= while (<boolean-expression>) {<statements>}
+                        | do {<statements>} while (<boolean-expression>);	
+
+<custom-statement> ::= gets(<identifier>);
+			| puts(<identifier>);
+			| strcpy(<identifier>, <identifier>);
+			| strncpy(<identifier>, <identifier>);
+
+<printfargs> ::= <primary-expression> | <printfargs>, <primary-expression>
