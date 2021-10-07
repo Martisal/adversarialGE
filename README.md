@@ -26,12 +26,12 @@ This simple example is designed for becoming familiar with the approach and the 
 
 The aim is to evolve binary strings having the highest possible of zeros. Notice that, for this simple task, a conventional fitness function that counts the zeros, as the one in `./fitness/zeromax.py`, should be sufficient. However, since we are interested in exploiting the activation of artificial neurons for computing the fitness, for this example we use the output of a multilayer perceptron trained in counting the number of zeros in the string. For training a new model trying different parameters, just modify and run the script `perceptron_zeromax.py`.
 
-This example requires:
+This example requires the following files (available in this repository):
 
-* Grammar file: `./grammars/example01.bnf`
-* Parameters file: `./parameters/example01.txt`
+* [Grammar](./grammars/example01.bnf): `./grammars/example01.bnf`
+* [Parameters](./parameters/example01.txt): `./parameters/example01.txt`
 * Neural model: `./models/mlp_zeromax.pickle`
-* Fitness function: `./fitness/zeromax_neuro.py`
+* [Fitness function](./fitness/zeromax_neuro.py): `./fitness/zeromax_neuro.py`
 
 Be sure that all these files are properly located in the sub-directories of PonyGE2, as explained in the previous section.
 
